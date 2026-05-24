@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hazim Web Desain</title>
 
+  <!-- FONT PREMIUM -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
   * {
     margin: 0;
@@ -13,44 +16,47 @@
   }
 
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: white;
     background: linear-gradient(135deg, #0f172a 0%, #0b1120 40%, #000000 100%);
   }
 
-  /* HERO */
+  /* HERO LAYOUT (PERSIS HOMEPAGE STYLE) */
   .hero {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 80px 10%;
+    justify-content: flex-start;
+    padding: 80px 12%;
     min-height: 100vh;
+    gap: 80px;
   }
 
-  /* TEXT */
+  /* TEXT AREA */
   .hero-text {
-    max-width: 520px;
-    animation: fadeUp 1s ease;
+    max-width: 540px;
   }
 
-  /* 🔥 JUDUL UTAMA */
+  /* JUDUL */
   .hero-title {
-    font-size: 48px;
+    font-size: 52px;
     font-weight: 800;
-    line-height: 1.3;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
     margin-bottom: 20px;
   }
 
-  /* 🔥 WARNA KUNING */
+  /* HIGHLIGHT KUNING */
   .highlight {
     color: #facc15;
     font-weight: 900;
   }
 
+  /* DESKRIPSI */
   .hero-text p {
     color: #cbd5e1;
-    line-height: 1.7;
+    line-height: 1.8;
     margin-bottom: 25px;
+    font-size: 15px;
   }
 
   /* BUTTON */
@@ -61,6 +67,7 @@
     color: white;
     text-decoration: none;
     border-radius: 8px;
+    font-weight: 600;
     transition: 0.3s ease;
   }
 
@@ -71,6 +78,9 @@
 
   /* IMAGE */
   .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
     position: relative;
   }
 
@@ -112,27 +122,16 @@
     opacity: 1;
   }
 
-  /* ANIMATION */
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   /* MOBILE */
   @media (max-width: 768px) {
     .hero {
       flex-direction: column;
       text-align: center;
+      gap: 40px;
     }
 
-    .hero-image {
-      margin-top: 40px;
+    .hero-title {
+      font-size: 34px;
     }
   }
   </style>
@@ -147,7 +146,8 @@
   <div class="hero-text">
     <h1 class="hero-title">
       Dari Pesantren ke Dunia Digital <br>
-      <span class="highlight">Membangun Karya</span> yang Bermakna
+      <span class="highlight">Membangun Karya</span><br>
+      yang Bermakna
     </h1>
 
     <p>
