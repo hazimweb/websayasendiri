@@ -21,7 +21,7 @@ body{
   overflow-x:hidden;
 }
 
-/* BACKGROUND GLOW */
+/* BACKGROUND */
 body::before{
   content:'';
   position:fixed;
@@ -46,6 +46,52 @@ body::after{
   z-index:-1;
 }
 
+/* LOADING SCREEN */
+.loader{
+  position:fixed;
+  inset:0;
+  background:#050816;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:99999;
+  transition:.6s;
+}
+
+.loader img{
+  width:110px;
+  animation:logoScale 1.5s ease forwards, glow 2s infinite;
+}
+
+.loading-text{
+  margin-top:15px;
+  font-size:14px;
+  color:#aaa;
+  animation:fadeText 1.5s infinite alternate;
+}
+
+.loader.hide{
+  opacity:0;
+  visibility:hidden;
+}
+
+@keyframes logoScale{
+  from{transform:scale(0.5);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+
+@keyframes glow{
+  0%{filter:drop-shadow(0 0 10px rgba(255,193,7,0.2))}
+  50%{filter:drop-shadow(0 0 35px rgba(255,193,7,0.7))}
+  100%{filter:drop-shadow(0 0 10px rgba(255,193,7,0.2))}
+}
+
+@keyframes fadeText{
+  from{opacity:0.4}
+  to{opacity:1}
+}
+
 /* HERO */
 .hero{
   min-height:100vh;
@@ -57,7 +103,6 @@ body::after{
   flex-wrap:wrap;
 }
 
-/* TEXT */
 .hero-text{
   flex:1;
   min-width:300px;
@@ -65,7 +110,7 @@ body::after{
 }
 
 .hero-text h1{
-  font-size:60px;
+  font-size:58px;
   line-height:1.2;
   font-weight:800;
   margin-bottom:20px;
@@ -82,7 +127,6 @@ body::after{
   max-width:600px;
 }
 
-/* BUTTON */
 .btn{
   display:inline-block;
   padding:14px 35px;
@@ -99,48 +143,43 @@ body::after{
   transform:translateY(-4px);
 }
 
-/* IMAGE */
+/* LOGO */
 .hero-image{
   flex:1;
-  min-width:300px;
   display:flex;
   justify-content:center;
 }
 
-/* 🔥 LOGO ANIMASI */
 .hero-image img{
-  max-width:320px;
-
-  animation:
-    float 4s ease-in-out infinite,
-    glow 3s ease-in-out infinite,
-    fadeIn 1s ease;
-
+  max-width:300px;
+  animation:float 4s ease-in-out infinite, glow 3s infinite;
 }
 
-/* FLOAT */
 @keyframes float{
   0%{transform:translateY(0)}
   50%{transform:translateY(-15px)}
   100%{transform:translateY(0)}
 }
 
-/* GLOW */
-@keyframes glow{
-  0%{filter:drop-shadow(0 0 10px rgba(255,193,7,0.2))}
-  50%{filter:drop-shadow(0 0 35px rgba(255,193,7,0.7))}
-  100%{filter:drop-shadow(0 0 10px rgba(255,193,7,0.2))}
+/* TRANSITION */
+.transition{
+  position:fixed;
+  inset:0;
+  background:#050816;
+  opacity:0;
+  pointer-events:none;
+  transition:.5s;
+  z-index:9999;
 }
 
-/* FADE */
+.transition.active{
+  opacity:1;
+}
+
+/* ANIMASI */
 @keyframes fadeUp{
   from{opacity:0;transform:translateY(40px)}
   to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes fadeIn{
-  from{opacity:0}
-  to{opacity:1}
 }
 
 /* MOBILE */
@@ -151,22 +190,31 @@ body::after{
   }
 
   .hero-text h1{
-    font-size:42px;
+    font-size:40px;
   }
 }
 </style>
-
 </head>
 
 <body>
+
+<!-- LOADING -->
+<div class="loader" id="loader">
+  <img src="logo.png">
+  <p class="loading-text">Loading Experience...</p>
+</div>
+
+<!-- TRANSITION -->
+<div class="transition" id="transition"></div>
 
 <section class="hero">
 
   <div class="hero-text">
 
     <h1>
-      Dari Pesantren ke Dunia Digital <br>
-      <span>Membantu Bisnis Tumbuh</span> Dengan Website Profesional
+      Membantu Bisnis Tumbuh <br>
+      dengan <span>Website Profesional</span><br>
+      yang Modern & Terpercaya
     </h1>
 
     <p>
@@ -174,21 +222,40 @@ body::after{
       tampil lebih profesional melalui website modern.
       <br><br>
       Dengan desain yang clean, mobile friendly, dan terstruktur,
-      website anda tidak hanya terlihat bagus,
-      tapi juga meningkatkan kepercayaan dan potensi penjualan
+      website Anda tidak hanya terlihat bagus,
+      tapi juga meningkatkan kepercayaan dan potensi penjualan.
     </p>
 
-    <a href="home.html" class="btn">
-      Lihat portofolio dan layanan →
+    <a href="home.html" class="btn" onclick="goPage(event)">
+      Lihat Portfolio & Layanan →
     </a>
 
   </div>
 
   <div class="hero-image">
-    <img src="logo.png" alt="Hazim Logo">
+    <img src="logo.png" alt="logo">
   </div>
 
 </section>
+
+<script>
+// LOADER
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("loader").classList.add("hide");
+  }, 1800);
+});
+
+// TRANSITION
+function goPage(e){
+  e.preventDefault();
+  document.getElementById("transition").classList.add("active");
+
+  setTimeout(()=>{
+    window.location.href="home.html";
+  },500);
+}
+</script>
 
 </body>
 </html>
