@@ -95,14 +95,8 @@
       flex-wrap:wrap;
     }
 
-    .hero-text{
-      flex:1;
-      min-width:300px;
-    }
-
     .hero-text h1{
       font-size:65px;
-      line-height:1.1;
       margin-bottom:20px;
       font-weight:800;
     }
@@ -113,10 +107,7 @@
 
     .hero-text p{
       color:#b9b9b9;
-      font-size:17px;
-      line-height:1.8;
       margin-bottom:35px;
-      max-width:650px;
     }
 
     .btn{
@@ -127,57 +118,10 @@
       color:white;
       text-decoration:none;
       font-weight:600;
-      transition:.3s;
-      box-shadow:0 10px 30px rgba(13,110,253,.35);
-    }
-
-    .btn:hover{
-      transform:translateY(-4px);
-    }
-
-    .hero-image{
-      flex:1;
-      min-width:300px;
-      display:flex;
-      justify-content:center;
-    }
-
-    .hero-photo{
-      width:100%;
-      display:flex;
-      justify-content:center;
-    }
-
-    .hero-photo img{
-      width:100%;
-      max-width:520px;
-      border-radius:30px;
-      object-fit:cover;
-      box-shadow:0 25px 60px rgba(0,0,0,.45);
-      border:1px solid rgba(255,255,255,.08);
-      transition:.4s;
-    }
-
-    .hero-photo img:hover{
-      transform:translateY(-8px) scale(1.02);
     }
 
     section{
       padding:90px 8%;
-    }
-
-    .section-title{
-      text-align:center;
-      margin-bottom:60px;
-    }
-
-    .section-title h2{
-      font-size:45px;
-      margin-bottom:15px;
-    }
-
-    .section-title p{
-      color:#b9b9b9;
     }
 
     .cards{
@@ -191,26 +135,7 @@
       border:1px solid rgba(255,255,255,.08);
       border-radius:24px;
       padding:35px;
-      transition:.3s;
       position:relative;
-      overflow:hidden;
-    }
-
-    .card::before{
-      content:'';
-      position:absolute;
-      width:200px;
-      height:200px;
-      background:#0d6efd25;
-      border-radius:50%;
-      top:-80px;
-      right:-80px;
-      filter:blur(20px);
-    }
-
-    .card:hover{
-      transform:translateY(-8px);
-      border-color:#0d6efd;
     }
 
     .card h3{
@@ -218,203 +143,55 @@
       margin-bottom:10px;
     }
 
-    .price{
-      font-size:42px;
-      color:#ffc107;
-      font-weight:800;
-      margin-bottom:20px;
-    }
+    /* PRICING */
 
-    .card ul{
-      list-style:none;
-    }
-
-    .card ul li{
-      margin-bottom:12px;
-      color:#d8d8d8;
-    }
-
-    .detail-btn{
-      margin-top:25px;
-      padding:14px;
-      text-align:center;
-      border-radius:14px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.08);
-      color:#ffffff;
-      cursor:pointer;
-      transition:.3s;
-      font-weight:500;
-    }
-
-    .detail-btn:hover{
-      background:#0d6efd;
-      transform:translateY(-3px);
-    }
-
-    .portfolio{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:25px;
-    }
-
-    .portfolio-box{
-      border-radius:24px;
-      overflow:hidden;
-      background:linear-gradient(135deg,#0f2e5f,#08111f);
-      border:1px solid rgba(255,255,255,.08);
-      position:relative;
-      padding:35px;
-      transition:.3s;
-      cursor:pointer;
-    }
-
-    .portfolio-box:hover{
-      transform:translateY(-8px);
-      border-color:#0d6efd;
-    }
-
-    .portfolio-box h3{
-      font-size:34px;
-      margin-bottom:18px;
-    }
-
-    .portfolio-box p{
-      color:#ccc;
-      line-height:1.8;
+    .old-price{
+      text-decoration:line-through;
+      color:#888;
       font-size:16px;
     }
 
-    .big-box{
-      min-height:340px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+    .new-price{
+      font-size:42px;
+      color:#ffc107;
+      font-weight:800;
+      margin-bottom:15px;
     }
 
-    .detail-portfolio{
-      margin-top:30px;
-      padding:15px;
-      border-radius:14px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.08);
-      text-align:center;
-      transition:.3s;
-      font-weight:500;
+    .promo-badge{
+      position:absolute;
+      top:15px;
+      right:15px;
+      background:#ff3b3b;
+      padding:6px 12px;
+      font-size:12px;
+      border-radius:8px;
     }
 
-    .portfolio-box:hover .detail-portfolio{
-      background:#0d6efd;
+    ul{
+      list-style:none;
+      margin-top:10px;
     }
 
-    .cta{
-      text-align:center;
-      background:linear-gradient(135deg,#0d6efd,#001f4d);
-      border-radius:35px;
-      padding:70px 30px;
-      margin:70px 8%;
-      box-shadow:0 20px 50px rgba(13,110,253,.25);
+    ul li{
+      margin-bottom:10px;
+      color:#d8d8d8;
     }
 
-    .cta h2{
-      font-size:50px;
-      margin-bottom:20px;
-    }
+    /* FLOATING WA */
 
-    .cta p{
-      color:#e5e5e5;
-      margin-bottom:35px;
-      line-height:1.8;
-    }
-
-    footer{
-      padding:35px 8%;
-      text-align:center;
-      border-top:1px solid rgba(255,255,255,.08);
-      color:#9f9f9f;
-    }
-
-    /* POPUP */
-
-    .popup{
+    .wa-float{
       position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background:rgba(0,0,0,.45);
-      backdrop-filter:blur(10px);
-      display:none;
+      bottom:25px;
+      right:25px;
+      width:60px;
+      height:60px;
+      background:#25D366;
+      display:flex;
       align-items:center;
       justify-content:center;
-      padding:20px;
-      z-index:99999;
-    }
-
-    .popup-box{
-      width:100%;
-      max-width:650px;
-      background:#08111f;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:30px;
-      padding:40px;
-      position:relative;
-      animation:popupShow .3s ease;
-      max-height:85vh;
-      overflow-y:auto;
-    }
-
-    @keyframes popupShow{
-      from{
-        opacity:0;
-        transform:scale(.8);
-      }
-
-      to{
-        opacity:1;
-        transform:scale(1);
-      }
-    }
-
-    .popup-box h2{
-      font-size:38px;
-      margin-bottom:20px;
-    }
-
-    .popup-box p{
-      color:#d6d6d6;
-      line-height:2;
-      margin-bottom:35px;
-      white-space:pre-line;
-    }
-
-    .close-popup{
-      position:absolute;
-      top:18px;
-      right:25px;
-      font-size:35px;
-      cursor:pointer;
-      color:white;
-    }
-
-    @media(max-width:900px){
-
-      .hero{
-        padding-top:120px;
-      }
-
-      .hero-text h1{
-        font-size:48px;
-      }
-
-      nav{
-        display:none;
-      }
-
-      .cta h2{
-        font-size:35px;
-      }
-
+      border-radius:50%;
+      z-index:9999;
     }
 
   </style>
@@ -422,292 +199,55 @@
 
 <body>
 
-<header>
-
-  <div class="logo">
-    Hazim<span>Web</span>Desain
-  </div>
-
-  <nav>
-    <a href="#">Home</a>
-    <a href="#layanan">Layanan</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Kontak</a>
-  </nav>
-
-</header>
-
-<section class="hero">
-
-  <div class="hero-text">
-
-    <h1>
-      Bikin Website <span>Profesional</span> Untuk Bisnis Anda
-    </h1>
-
-    <p>
-      Jasa pembuatan website modern, mobile friendly,
-      dan siap meningkatkan branding bisnis, toko online,
-      UMKM, personal branding, hingga company profile.
-    </p>
-
-    <a href="https://wa.me/6287841232441" class="btn">
-      Konsultasi Sekarang
-    </a>
-
-  </div>
-
-  <div class="hero-image">
-
-    <div class="hero-photo">
-
-      <img src="gambar2.jpg">
-
-    </div>
-
-  </div>
-
-</section>
-
 <section id="layanan">
 
-  <div class="section-title">
-    <h2>Paket Website</h2>
-    <p>Pilih kebutuhan website terbaik untuk bisnis Anda</p>
-  </div>
+  <h2 style="text-align:center;margin-bottom:40px;">Paket Website</h2>
 
   <div class="cards">
 
     <div class="card">
+      <div class="promo-badge">PROMO</div>
       <h3>Link Bio</h3>
-      <div class="price">start from 599K</div>
-
+      <div class="old-price">Rp 599K</div>
+      <div class="new-price">Rp 299K</div>
       <ul>
         <li>✔ Tampilan modern</li>
         <li>✔ Mobile friendly</li>
-        <li>✔ 1 halaman</li>
-        <li>✔ Fast loading</li>
       </ul>
-
-      <div 
-        class="detail-btn"
-        onclick="openPackage(
-          'Paket Link Bio',
-          'Paket ini cocok untuk content creator, jualan online, dan personal branding.\n\nYang didapatkan:\n✔ Website premium modern\n✔ Integrasi WhatsApp\n✔ Tombol sosial media\n✔ Responsive semua perangkat\n✔ Desain clean profesional\n✔ Siap digunakan untuk promosi'
-        )"
-      >
-        Klik untuk selengkapnya
-      </div>
-
     </div>
 
     <div class="card">
+      <div class="promo-badge">BEST DEAL</div>
       <h3>Landing Page</h3>
-      <div class="price">start from 700K</div>
-
+      <div class="old-price">Rp 700K</div>
+      <div class="new-price">Rp 400K</div>
       <ul>
         <li>✔ Desain premium</li>
         <li>✔ Responsive</li>
-        <li>✔ Cocok promosi</li>
-        <li>✔ Siap publish</li>
       </ul>
-
-      <div 
-        class="detail-btn"
-        onclick="openPackage(
-          'Paket Landing Page',
-          'Landing page profesional untuk promosi bisnis maupun jasa.\n\nYang didapatkan:\n✔ Desain eksklusif\n✔ Animasi modern\n✔ Tombol WhatsApp langsung\n✔ Responsive mobile\n✔ Tampilan premium\n✔ Cocok meningkatkan branding'
-        )"
-      >
-        Klik untuk selengkapnya
-      </div>
-
     </div>
 
     <div class="card">
+      <div class="promo-badge">LIMITED</div>
       <h3>Toko Online</h3>
-      <div class="price">start from 800K</div>
-
+      <div class="old-price">Rp 800K</div>
+      <div class="new-price">Rp 500K</div>
       <ul>
         <li>✔ Katalog produk</li>
         <li>✔ Keranjang belanja</li>
-        <li>✔ Integrasi WhatsApp</li>
-        <li>✔ Desain eksklusif</li>
       </ul>
-
-      <div 
-        class="detail-btn"
-        onclick="openPackage(
-          'Paket Toko Online',
-          'Website toko online modern untuk meningkatkan penjualan bisnis.\n\nYang didapatkan:\n✔ Katalog produk premium\n✔ Keranjang belanja\n✔ Integrasi WhatsApp\n✔ Mobile friendly\n✔ Tampilan profesional\n✔ Cocok untuk semua jenis jualan'
-        )"
-      >
-        Klik untuk selengkapnya
-      </div>
-
     </div>
 
   </div>
 
 </section>
 
-<section id="portfolio">
-
-  <div class="section-title">
-    <h2>Portfolio</h2>
-    <p>Contoh jenis website modern yang bisa dibuat untuk kebutuhan bisnis dan branding</p>
-  </div>
-
-  <div class="portfolio">
-
-    <div 
-      class="portfolio-box big-box"
-      onclick="openPopup(
-        'Business Website',
-        'Business Website adalah website profesional untuk perusahaan, UMKM, jasa, maupun bisnis pribadi agar terlihat lebih terpercaya dan modern di mata customer.\n\nYang didapatkan:\n✔ Tampilan premium dan elegan\n✔ Halaman profil bisnis profesional\n✔ Informasi layanan lengkap\n✔ Tombol WhatsApp langsung\n✔ Mobile friendly semua perangkat\n✔ Loading cepat dan modern\n✔ Meningkatkan branding bisnis\n✔ Membuat bisnis terlihat lebih terpercaya\n\nCocok untuk:\n• Jasa\n• UMKM\n• Perusahaan\n• Agency\n• Freelancer profesional'
-      )"
-    >
-      <h3>Business Website</h3>
-
-      <p>
-        Website profesional untuk meningkatkan branding bisnis dan membuat usaha terlihat lebih terpercaya.
-      </p>
-
-      <div class="detail-portfolio">
-        Klik untuk melihat detail lengkap
-      </div>
-
-    </div>
-
-    <div 
-      class="portfolio-box big-box"
-      onclick="openPopup(
-        'Online Shop',
-        'Online Shop Website adalah website toko online modern untuk menjual produk secara profesional langsung melalui website sendiri.\n\nYang didapatkan:\n✔ Katalog produk modern\n✔ Tampilan premium dan elegan\n✔ Integrasi WhatsApp otomatis\n✔ Halaman detail produk\n✔ Mobile friendly\n✔ Desain profesional\n✔ Keranjang belanja modern\n✔ Tampilan lebih meyakinkan dibanding jualan biasa\n✔ Cocok untuk meningkatkan penjualan online\n\nCocok untuk:\n• Fashion\n• Skincare\n• Elektronik\n• Makanan\n• Produk digital\n• Semua jenis jualan online'
-      )"
-    >
-      <h3>Online Shop</h3>
-
-      <p>
-        Website toko online modern dengan tampilan premium agar jualan terlihat lebih profesional dan menarik.
-      </p>
-
-      <div class="detail-portfolio">
-        Klik untuk melihat detail lengkap
-      </div>
-
-    </div>
-
-    <div 
-      class="portfolio-box big-box"
-      onclick="openPopup(
-        'Personal Branding',
-        'Personal Branding Website adalah website khusus untuk membangun identitas profesional dan meningkatkan kepercayaan audience atau client.\n\nYang didapatkan:\n✔ Desain aesthetic modern\n✔ Profil profesional premium\n✔ Showcase skill dan karya\n✔ Integrasi sosial media\n✔ Tampilan clean dan elegan\n✔ Responsive semua perangkat\n✔ Tombol kontak langsung\n✔ Meningkatkan personal branding\n✔ Membantu terlihat lebih profesional\n\nCocok untuk:\n• Content Creator\n• Freelancer\n• Influencer\n• Editor\n• Designer\n• Programmer\n• Public figure'
-      )"
-    >
-      <h3>Personal Branding</h3>
-
-      <p>
-        Website modern untuk membangun personal branding agar terlihat lebih profesional dan eksklusif.
-      </p>
-
-      <div class="detail-portfolio">
-        Klik untuk melihat detail lengkap
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<div class="cta" id="contact">
-
-  <h2>Siap Punya Website Keren?</h2>
-
-  <p>
-    Tingkatkan kepercayaan customer dengan website profesional sekarang juga.
-  </p>
-
-  <a href="https://wa.me/6287841232441" class="btn">
-    Chat WhatsApp
-  </a>
-
-</div>
-
-<footer>
-  © 2026 HazimWebDesain • All Rights Reserved
-</footer>
-
-<!-- POPUP -->
-
-<div class="popup" id="popup">
-
-  <div class="popup-box">
-
-    <span class="close-popup" onclick="closePopup()">&times;</span>
-
-    <h2 id="popup-title"></h2>
-
-    <p id="popup-text"></p>
-
-    <a 
-      id="popup-btn"
-      href="#"
-      target="_blank"
-      class="btn"
-    >
-      Chat Sekarang
-    </a>
-
-  </div>
-
-</div>
-
-<!-- MUSIK -->
-
-<audio autoplay loop>
-  <source src="https://files.catbox.moe/8q6m6m.mp3" type="audio/mp3">
-</audio>
-
-<!-- SCRIPT -->
-
-<script>
-
-  const popup = document.getElementById("popup");
-  const popupTitle = document.getElementById("popup-title");
-  const popupText = document.getElementById("popup-text");
-  const popupBtn = document.getElementById("popup-btn");
-
-  function openPopup(title, text){
-
-    popup.style.display = "flex";
-
-    popupTitle.innerText = title;
-    popupText.innerText = text;
-
-    popupBtn.href =
-      "https://wa.me/6287841232441?text=Halo,%20saya%20ingin%20bertanya%20tentang%20website.";
-
-  }
-
-  function openPackage(title, text){
-
-    popup.style.display = "flex";
-
-    popupTitle.innerText = title;
-    popupText.innerText = text;
-
-    popupBtn.href =
-      "https://wa.me/6287841232441?text=Halo,%20saya%20ingin%20bertanya%20tentang%20paket%20website.";
-
-  }
-
-  function closePopup(){
-    popup.style.display = "none";
-  }
-
-</script>
+<!-- FLOATING WA -->
+<a href="https://wa.me/6287841232441?text=Halo,%20saya%20tertarik%20dengan%20jasa%20website"
+class="wa-float"
+target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30">
+</a>
 
 </body>
 </html>
