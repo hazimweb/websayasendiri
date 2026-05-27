@@ -14,51 +14,53 @@
 body{
 background:#050816;
 color:white;
-overflow-x:hidden;
 }
 
-/* HERO */
+/* HERO GRID */
 
 .hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
+padding:120px 8%;
 text-align:center;
-padding:100px 20px;
 }
 
 .hero h1{
 font-size:48px;
+margin-bottom:50px;
 font-weight:800;
-margin-bottom:20px;
 }
 
 .hero span{color:#ffc107;}
 
-.hero p{
+.hero-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.hero-box{
+background:rgba(255,255,255,.05);
+padding:25px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.hero-box h3{
+font-size:18px;
+margin-bottom:10px;
+color:#ffc107;
+}
+
+.hero-box p{
+font-size:14px;
 color:#bbb;
-max-width:600px;
-margin:auto;
-margin-bottom:30px;
 line-height:1.6;
 }
 
-.btn{
-background:#0d6efd;
-padding:15px 30px;
-border-radius:12px;
-text-decoration:none;
-color:white;
-font-weight:600;
-display:inline-block;
-}
-
-/* TRUST BAR */
+/* TRUST */
 
 .trust{
 text-align:center;
-margin-top:20px;
+margin-top:40px;
 color:#aaa;
 font-size:14px;
 }
@@ -78,6 +80,7 @@ background:rgba(255,255,255,.05);
 padding:30px;
 border-radius:20px;
 position:relative;
+border:1px solid rgba(255,255,255,.08);
 }
 
 /* PRICING */
@@ -94,43 +97,66 @@ font-weight:800;
 margin-bottom:10px;
 }
 
+.desc{
+font-size:14px;
+color:#bbb;
+margin-bottom:15px;
+line-height:1.6;
+}
+
 .promo-badge{
 position:absolute;
 top:10px;
 right:10px;
-background:red;
-padding:5px 10px;
-border-radius:6px;
+background:rgba(255,255,255,.1);
+padding:6px 12px;
+border-radius:8px;
 font-size:12px;
 }
 
-/* CTA */
+/* FLOAT MENU */
 
-.cta{
-text-align:center;
-margin-top:50px;
-}
-
-.cta p{
-color:#aaa;
-margin-bottom:20px;
-}
-
-/* FLOATING WA */
-
-.wa-float{
+.floating-menu{
 position:fixed;
 bottom:25px;
 right:25px;
+z-index:999;
+}
+
+.menu-btn{
 width:60px;
 height:60px;
 background:#25D366;
+border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-border-radius:50%;
-box-shadow:0 10px 25px rgba(0,0,0,.3);
-z-index:999;
+cursor:pointer;
+}
+
+.menu-options{
+display:none;
+flex-direction:column;
+margin-bottom:10px;
+gap:10px;
+}
+
+.menu-options a{
+background:#111;
+padding:10px 15px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-size:14px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+color:#777;
+font-size:14px;
 }
 
 </style>
@@ -139,20 +165,39 @@ z-index:999;
 <body>
 
 <!-- HERO -->
-<div class="hero">
-<div>
-<h1>Bikin Website <span>Profesional</span> yang Bikin Bisnis Lebih Dipercaya</h1>
-<p>Website modern, cepat, dan siap bikin customer lebih yakin beli dari Anda.</p>
+<section class="hero">
 
-<a href="https://wa.me/6287841232441?text=Halo%20saya%20tertarik%20buat%20website" class="btn">
-Konsultasi Gratis
-</a>
+<h1>Bikin Website <span>Yang Bikin Orang Langsung Percaya</span></h1>
+
+<div class="hero-grid">
+
+<div class="hero-box">
+<h3>First Impression Kuat</h3>
+<p>Website Anda langsung terlihat profesional dalam 3 detik pertama.</p>
+</div>
+
+<div class="hero-box">
+<h3>Naikin Kepercayaan</h3>
+<p>Customer lebih yakin beli karena bisnis terlihat serius & terpercaya.</p>
+</div>
+
+<div class="hero-box">
+<h3>Closing Lebih Mudah</h3>
+<p>Desain diarahkan untuk bikin orang langsung klik WhatsApp Anda.</p>
+</div>
+
+<div class="hero-box">
+<h3>Upgrade Branding</h3>
+<p>Bukan sekadar website, tapi alat jualan yang bikin bisnis naik level.</p>
+</div>
+
+</div>
 
 <div class="trust">
-Dipercaya UMKM • Bisa Revisi • Support sampai jadi
+✔ Desain Premium • ✔ Fast Loading • ✔ Mobile Friendly • ✔ Support Sampai Jadi • ✔ Bisa Revisi
 </div>
-</div>
-</div>
+
+</section>
 
 <!-- PRICING -->
 <section>
@@ -162,45 +207,65 @@ Dipercaya UMKM • Bisa Revisi • Support sampai jadi
 <div class="cards">
 
 <div class="card">
-<div class="promo-badge">PROMO</div>
+<div class="promo-badge">Promo Terbatas</div>
 <h3>Link Bio</h3>
 <div class="old-price">Rp 599K</div>
 <div class="new-price">Rp 299K</div>
-<p style="color:#aaa;font-size:14px;">Cocok untuk jualan & personal branding</p>
+<div class="desc">Cocok untuk personal branding dan jualan online agar terlihat lebih profesional dan terpercaya di mata customer.</div>
 </div>
 
 <div class="card">
-<div class="promo-badge" style="background:#ffc107;color:#000;">BEST</div>
+<div class="promo-badge">Promo Terbatas</div>
 <h3>Landing Page</h3>
 <div class="old-price">Rp 700K</div>
 <div class="new-price">Rp 400K</div>
-<p style="color:#aaa;font-size:14px;">Paling cepat closing client</p>
+<div class="desc">Dirancang khusus untuk meningkatkan closing penjualan dengan tampilan yang fokus pada konversi dan kepercayaan.</div>
 </div>
 
 <div class="card">
-<div class="promo-badge">LIMITED</div>
+<div class="promo-badge">Promo Terbatas</div>
 <h3>Toko Online</h3>
 <div class="old-price">Rp 800K</div>
 <div class="new-price">Rp 500K</div>
-<p style="color:#aaa;font-size:14px;">Untuk bisnis yang mau scale</p>
+<div class="desc">Solusi lengkap untuk bisnis yang ingin menjual produk secara profesional dengan sistem katalog modern.</div>
+</div>
+
+<div class="card">
+<div class="promo-badge">Custom</div>
+<h3>Custom Website</h3>
+<div class="new-price">DM Only</div>
+<div class="desc">Kebutuhan khusus? Kami siap bantu dengan solusi website sesuai kebutuhan bisnis Anda + Free Konsultasi.</div>
 </div>
 
 </div>
 
 </section>
 
-<!-- CTA -->
-<div class="cta">
-<p>Slot terbatas minggu ini. Siapa cepat dia dapat.</p>
-<a href="https://wa.me/6287841232441?text=Halo%20saya%20mau%20order%20website" class="btn">
-Order Sekarang
-</a>
+<!-- FLOATING MENU -->
+<div class="floating-menu">
+
+<div class="menu-options" id="menuOptions">
+<a href="https://wa.me/6287841232441?text=Halo%20saya%20tertarik%20jasa%20website">Chat WhatsApp</a>
+<a href="https://www.instagram.com/haaaz.id?igsh=cGh6Zjc0NWxxem56">Instagram</a>
 </div>
 
-<!-- FLOATING WA -->
-<a href="https://wa.me/6287841232441?text=Halo%20saya%20tertarik%20jasa%20website" class="wa-float">
+<div class="menu-btn" onclick="toggleMenu()">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30">
-</a>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+© 2026 HazimWeb Desain • Crafted with Precision
+</footer>
+
+<script>
+function toggleMenu(){
+const menu = document.getElementById("menuOptions");
+menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+</script>
 
 </body>
 </html>
